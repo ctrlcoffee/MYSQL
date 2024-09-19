@@ -6,3 +6,13 @@ CREATE TABLE students (
     age INT,
     gender VARCHAR(10)
 );
+
+
+CREATE TABLE exams (
+    exam_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    subject VARCHAR(50),
+    grade CHAR(1),
+    FOREIGN KEY (student_id) REFERENCES students(student_id) ON DELETE CASCADE
+);
+
